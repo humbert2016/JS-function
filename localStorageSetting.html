@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<div id="op1"></div>
+	<div id="op2"></div>
+	<div id="op3"></div>
+	<div id="op4"></div>
+	<script>
+
+	// localStorage - 没有时间限制的数据存储
+	// sessionStorage - 浏览器关闭就没了
+	// localStorage 和 sessionStorage 的方法是一样的，都不能自己设置过期时间。
+
+
+	//--判断是否支持 web 存储-------------
+	// if(typeof(Storage)!=="undefined"){ 
+	//   localStorage.lastname="Smith";  
+	// }else{
+	//   alert("对不起，您的浏览器不支持 web 存储。");
+	// }
+
+	//清除所有数据--------------------------
+	// localStorage.clear(); 
+	
+	// localStorage 设置值：-----------------
+	localStorage.king2="8999999";
+	localStorage.king3="11111111";
+	localStorage.king4="22222222";
+	localStorage.setItem('king','9090909090');
+
+	// localStorage 取值：-----------------
+	// var x = localStorage.king2;
+	// var y = localStorage.getItem('king');
+
+	// document.getElementById('op1').innerHTML=x;
+	// document.getElementById('op2').innerHTML=y;
+
+	//获取本地存储数据数量---------------------
+	var z = localStorage.length;
+	document.getElementById('op3').innerHTML=z;
+
+	//获取第 N 个数据的 key 键值-------------
+	// var a = localStorage.key(0);
+	// document.getElementById('op3').innerHTML=a;
+
+	// 删除对应数据--------------------------
+	// localStorage.removeItem('king');
+
+	</script>
+</body>
+</html>
