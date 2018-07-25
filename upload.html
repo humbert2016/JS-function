@@ -1,0 +1,107 @@
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<script>
+	function uploadTest(this){
+		console.log(this.toString())
+		console.log(this.fileInput)
+		var file = this.fileInput.files[0];
+		console.log(file)
+		var formData = new FormData();
+		formData.append("name", file.name);
+		formData.append("file", file);
+		console.log(formData)
+		$.ajax({
+			url:'/storage/upload',
+			type:'POST',
+			processData: false,
+			contentType: false,
+			enctype:'multipart/form-data',
+			data:formData,
+			dataType:'json',
+			success:function(response){
+				console.log(response)
+			}
+		})
+	}
+
+	
+	// function uTest(){
+	// 	var xhr = new XMLHttpRequest();
+	// 	xhr.open('GET', '6666666666.pdf', true);
+	// 	xhr.responseType = 'arraybuffer';
+	// 	xhr.onreadystatechange = function () {
+	// 	    if (xhr.readyState == XMLHttpRequest.DONE) {
+	// 	    		console.log("5555")
+	// 				console.log(xhr.response)
+	// 				var arraybuffer = xhr.response;
+	// 				var file = new File([arraybuffer],"test.pdf", {type: 'application/pdf'});
+	// 				file.name = "test.pdf";
+	// 				var formData = new FormData();
+	// 				formData.append("name", file.name);
+	// 				formData.append("file", file);
+	// 				$.ajax({
+	// 					url:'/storage/upload',
+	// 					type:'POST',
+	// 					processData: false,
+	// 					contentType: false,
+	// 					enctype:'multipart/form-data',
+	// 					data:formData,
+	// 					dataType:'json',
+	// 					success:function(response){
+	// 						console.log(response)
+	// 					}
+	// 				})
+				
+	// 	    }
+	// 	}
+
+	// 	xhr.send();
+	
+	// }
+
+	// $.post('/saveAtt',{
+	// 	'attachments':[{
+	// 			"originalname": "test.pdf",
+	// 	        "name": "test.pdf",
+	// 	        "mimetype": "mimetype",
+	// 	        "path": "file/2017-05-16/upload_ccbcd42f63df4e7d601c4077214eb896.pdf",
+	// 	        "extension": "pdf",
+	// 	        "size": 11627,
+	// 	        "fileid": "16e4c356-ac8e-4405-a73a-d936030e3f55"
+	// 		}]
+	// },function(res){
+	// 	console.log(res);
+	// })
+	function sda(){
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', paf, true);
+		xhr.responseType = 'arraybuffer';
+	//	xhr.responseType = 'blob';
+		xhr.onreadystatechange = function () {
+		    if (xhr.readyState == XMLHttpRequest.DONE) {
+					var arraybuffer = xhr.response;
+					// if(!!window.ActiveXObject || "ActiveXObject" in window){
+						var file = new Blob([arraybuffer], {type: 'application/pdf'});
+						file.name = na+".pdf";
+						var formData = new FormData();
+						formData.append("name", na+".pdf");
+						formData.append("file", file,na+".pdf");
+		    }
+		}
+		xhr.send();
+	}
+
+	</script>
+</head>
+
+<body>
+	<input type="file" name="uploadfile" onchange="uploadTest(this)"/>
+	<button onclick="uTest()">6555</button>
+</body>
+    
+  
+
+
+</html>
